@@ -1,0 +1,298 @@
+.recipe {
+  background-color: $color-grey-light-1;
+
+  ///////////
+  // FIGURE
+  &__fig {
+    height: 32rem;
+    position: relative;
+    // transform: scale(1.04) translateY(-1px);
+    transform-origin: top;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      opacity: 0.6;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 20%) skewY(-6deg);
+    color: #fff;
+    font-weight: 700;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    width: 50%;
+    line-height: 1.95;
+    text-align: center;
+
+    span {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: 1.3rem 2rem;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 70%;
+    }
+  }
+
+  ///////////
+  // DETAILS
+  &__details {
+    display: flex;
+    align-items: center;
+    padding: 7.5rem 8rem 3.5rem 8rem;
+  }
+
+  &__info {
+    font-size: 1.65rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 4.5rem;
+    }
+  }
+
+  &__info-icon {
+    height: 2.35rem;
+    width: 2.35rem;
+    fill: $color-primary;
+    margin-right: 1.15rem;
+  }
+
+  &__info-data {
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+
+  &__info-buttons {
+    display: flex;
+    margin-left: 1.6rem;
+    transform: translateY(-1px);
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 10rem;
+
+    margin-left: auto;
+    margin-right: 1.2rem;
+
+    svg {
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: $color-primary;
+    }
+  }
+
+  ///////////
+  // INGREDIENTS
+  &__ingredients {
+    padding: 5rem 8rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    background-color: $color-grey-light-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    list-style: none;
+  }
+
+  &__ingredient {
+    display: flex;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-primary;
+    margin-right: 0.8rem;
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+  }
+
+  &__quantity {
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  ///////////
+  // DIRECTIONS
+  &__directions {
+    padding: 5rem 10rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__directions-text {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    color: $color-grey-dark-2;
+  }
+
+  &__publisher {
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-right: 0.4rem;
+  }
+}
+
+.btn--recipe {
+  grid-column: 1 / -1;
+  justify-self: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10rem;
+  background-image: $gradient;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn--recipe:hover {
+  transform: scale(1.05);
+}
+
+.btn--recipe-calories {
+  margin-top: -1.2rem;
+}
+////////////////////////
+// nutrition information window
+.nutrient--title {
+  bottom: unset;
+  top: 0;
+  transform: translate(-50%, -50%) skewY(-6deg);
+}
+
+.caloric--breakdown-section {
+  margin-bottom: 4.8rem;
+}
+
+.section--title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.ing--info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.ing--breakdown span {
+  background-image: $gradient;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+}
+
+.nutrients--table-box {
+  max-height: 24rem;
+  overflow-y: auto;
+}
+
+.nutrients--info-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.nutrients--info-table thead {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+thead th {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(251, 219, 137, 0.3);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(244, 138, 130, 0.3);
+}
+
+.table--data {
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+}
+
+.table--data:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.shopping__list-item {
+  display: flex;
+}
+
+.shopping__list-item .recipe__quantity {
+  align-self: flex-start;
+}
+
+.recipe--calories .message {
+  max-width: 52rem;
+}
+
+.calories--amount span {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #fbdb89, #f48982);
+  padding: 1.3rem 2rem;
+  border-radius: 10rem;
+}

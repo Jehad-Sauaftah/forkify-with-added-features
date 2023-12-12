@@ -1,0 +1,68 @@
+.search-results {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin-top: auto;
+  padding: 0 3.5rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  &__btn {
+    &--prev {
+      float: left;
+    }
+    &--next {
+      float: right;
+    }
+  }
+}
+
+.sort--info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3.25rem 1.2rem 3.25rem;
+}
+
+.sort--info .sort {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sort--info .sort:hover {
+  transform: scale(1.05);
+}
+
+.page--number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f38e82;
+}
+
+.copyright {
+  color: $color-grey-dark-2;
+  font-size: 1.2rem;
+  padding: 0 3.5rem;
+  margin-top: 4rem;
+
+  .twitter-link:link,
+  .twitter-link:visited {
+    color: $color-grey-dark-2;
+  }
+}

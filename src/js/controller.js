@@ -13,7 +13,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { MODAL_CLOSE_SEC, RENDER_FORM_SEC } from './config.js';
 import { async } from 'regenerator-runtime';
-import nutritionView from './views/nutritionView.js';
 
 // if (module.hot) {
 //   module.hot.accept();

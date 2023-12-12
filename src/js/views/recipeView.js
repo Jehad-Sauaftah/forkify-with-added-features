@@ -77,7 +77,6 @@ class RecipeView extends View {
           return this._getIngData(childrenArr);
         });
 
-        console.log(ingDataArr);
         handler(ingDataArr, true);
       }.bind(this)
     );

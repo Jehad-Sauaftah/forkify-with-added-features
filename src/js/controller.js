@@ -40,7 +40,6 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
   } catch (err) {
     recipeView.renderError();
-    console.log(err);
   }
 };
 
@@ -197,7 +196,6 @@ const controlDeleteRecipe = async function () {
 
     if (model.state.search.results.length === 0) resultsView._clear();
   } catch (err) {
-    console.error('💥', err);
     deleteRecipeView.renderError(err.message);
   }
 };
@@ -275,9 +273,3 @@ const init = function () {
 };
 
 init();
-
-const first = new Date(2023, 10, 0).getDate();
-const last = new Date(2023, 11, 0);
-console.log(first);
-console.log(last);
-console.log(last.getDay());

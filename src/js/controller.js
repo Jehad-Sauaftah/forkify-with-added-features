@@ -14,10 +14,6 @@ import 'regenerator-runtime/runtime';
 import { MODAL_CLOSE_SEC, RENDER_FORM_SEC } from './config.js';
 import { async } from 'regenerator-runtime';
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 ///////////////////////////////////////
 const controlRecipes = async function () {
   try {
@@ -54,7 +50,6 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3) Render results
-    // resultsView.render(model.state.search.results);
     resultsView.toggleList();
     resultsView.render(model.getSearchResultsPage());
 
@@ -78,7 +73,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
@@ -144,7 +138,6 @@ const controlAddRecipe = async function (newRecipe) {
 
     // Change ID in URL
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
-    // window.history.back();
 
     // Render bookmarks
     bookmarksView.render(model.state.bookmarks);

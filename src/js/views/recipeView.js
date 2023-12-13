@@ -140,13 +140,6 @@ class RecipeView extends View {
     );
   }
 
-  addHandlerRecipeCalories() {
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--weekly-calendar');
-      if (!btn) return;
-    });
-  }
-
   renderCalories(data) {
     const markup = `
     <div class="message">
@@ -248,7 +241,6 @@ class RecipeView extends View {
           
         <button class="btn--recipe btn--add-all">Add to Shopping List</button>
         <button class="btn--recipe btn--recipe-calories">Recipe Calories</button>
-        <button class="btn--recipe btn--weekly-calendar">📆</button>
       </ul>
     </div>
 
